@@ -1,0 +1,127 @@
+{% extends 'core\teacherbase.html' %}
+{% load static %}
+{% block title %}-Student Profile {% endblock title %}
+{% block content %}
+<div class="col-md-3">
+    <div class="card card-widget widget-user">
+        <!-- Add the bg color to the header using any of the bg-* classes -->
+        <div class="widget-user-header bg-info">
+            <h3 class="widget-user-username">{{studentdetails.first_name}}{{studentdetails.last_name}}</h3>
+            <h5 class="widget-user-desc">{{studentdetails.dept}}</h5>
+            <h5 class="widget-user-desc">{{studentdetails.enrollment}}</h5>
+        </div>
+        <div class="widget-user-image">
+            <img class="img-circle elevation-2" src="{{studentdetails.profilepic.url}}" alt="User Avatar">
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-sm-6 border-right">
+                    <div class="description-block">
+                        <span class="description-text">{{studentdetails.year}}</span>
+                    </div>
+                    <!-- /.description-block -->
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-6 border-right">
+                    <div class="description-block">
+                        <span class="description-text">{{studentdetails.semester}}</span>
+                    </div>
+                    <!-- /.description-block -->
+                </div>
+                <!-- /.col -->
+
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+
+    </div>
+</div>
+<div class="card-body">
+    <form class="form-horizontal" action="" method="POST">
+        {% csrf_token %}
+        <div class="form-group row">
+            <label for="inputName" class="col-sm-2 col-form-label">Department:</label>
+            <div class="col-sm-10">
+                {{AcademicForm.studentdept}}
+                <!-- <input type="text" class="form-control" id="inputName" placeholder="Name"> -->
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputEmail" class="col-sm-2 col-form-label">Year</label>
+            <div class="col-sm-10">
+                {{AcademicForm.studentyear}}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputName2" class="col-sm-2 col-form-label">Semester</label>
+            <div class="col-sm-10">
+                {{AcademicForm.studentsemester}}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputName2" class="col-sm-2 col-form-label">subject</label>
+            <div class="col-sm-10">
+                {{AcademicForm.subject}}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="inputName2" class="col-sm-2 col-form-label">Student Attendence</label>
+            <div class="col-sm-4">
+                {{AcademicForm.subjectattendence}}
+            </div>
+            <label for="inputName2" class="col-sm-2 col-form-label">Attendence(Total)</label>
+            <div class="col-sm-4">
+                {{AcademicForm.subjectclass}}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputName2" class="col-sm-2 col-form-label">Student Score</label>
+            <div class="col-sm-4">
+                {{AcademicForm.subjectscore}}
+            </div>
+            <label for="inputName2" class="col-sm-2 col-form-label">Total Marks</label>
+            <div class="col-sm-4">
+                {{AcademicForm.subjectmarks}}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="offset-sm-2 col-sm-10">
+                <button type="submit" class="btn btn-danger">Submit</button>
+            </div>
+        </div>
+    </form>
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+
+                <th>Subject</th>
+                <th>Semester</th>
+                <th>Attendence</th>
+                <th>Marks</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in StudentMarks %}
+            <tr>
+                <td>{{i.subject}}</td>
+                <td>{{i.studentsemester}}</td>
+                <td>{{i.subjectattendence}}/{{i.subjectclass}}</td>
+                <td>{{i.subjectscore}}/{{i.subjectmarks}}</td>
+                <td>{{i.date}}</td>
+
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+
+
+
+{% endblock content %}

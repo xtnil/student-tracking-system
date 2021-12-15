@@ -1,0 +1,293 @@
+{% extends 'core\siteBase.html' %}
+{% load static %}
+{% block title %}-CDC Profile {% endblock title %}
+
+
+{% block content %}
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">CDC</h1>
+            </div><!-- /.col -->
+
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <!-- Info boxes -->
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-2">
+                <div class="info-box">
+                    <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Mechanical</span>
+                        <span class="info-box-number">
+                            1000
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-12 col-sm-6 col-md-2">
+                <div class="info-box mb-3">
+                    <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-hotel"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Civil</span>
+                        <span class="info-box-number">1000</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+
+            <!-- fix for small devices only -->
+            <div class="clearfix hidden-md-up"></div>
+
+            <div class="col-12 col-sm-6 col-md-2">
+                <div class="info-box mb-3">
+                    <span class="info-box-icon bg-success elevation-1"><i class="fas fa-bolt"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Electrical</span>
+                        <span class="info-box-number">760</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-12 col-sm-6 col-md-2">
+                <div class="info-box mb-3">
+                    <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-wifi"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Electronics</span>
+                        <span class="info-box-number">2,000</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+
+            <div class="clearfix hidden-md-up"></div>
+
+            <div class="col-12 col-sm-6 col-md-2">
+                <div class="info-box mb-3">
+                    <span class="info-box-icon bg-success elevation-1"><i class="fas fa-laptop-code"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Computer</span>
+                        <span class="info-box-number">760</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+            <div class="col-12 col-sm-6 col-md-2">
+                <div class="info-box mb-3">
+                    <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-flask"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Science</span>
+                        <span class="info-box-number">2,000</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!--/. container-fluid -->
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">DataTable with default features</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Id</th>
+                                <th>Image</th>
+                                <th>Semester</th>
+                                <th>Year</th>
+                                <th>Dept</th>
+                                <th>Start Date</th>
+                                <th>End date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Debasish</td>
+                                <td>00000000</td>
+                                <td><img alt="Avatar" class="table-avatar" src="{% static 'dist/img/avatar.png'%}"
+                                        height="50" width="50"></td>
+                                <td>4th</td>
+                                <td>2nd</td>
+                                <td>Civil</td>
+                                <td>2/06/21</td>
+                                <td>2/06/23</td>
+                                <td class="project-actions text-right">
+                                    <a class="btn btn-primary btn-sm" href="#">
+                                        <i class="fas fa-folder">
+                                        </i>
+                                        View
+                                    </a>
+                                    <a class="btn btn-info btn-sm" href="#">
+                                        <i class="fas fa-pencil-alt">
+                                        </i>
+                                        Edit
+                                    </a>
+                                    <a class="btn btn-danger btn-sm" href="#">
+                                        <i class="fas fa-trash">
+                                        </i>
+                                        Delete
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Rahul</td>
+                                <td>00000001</td>
+                                <td><img alt="Avatar" class="table-avatar" src="{% static 'dist/img/avatar.png'%}"
+                                        height="50" width="50"></td>
+                                <td>6th</td>
+                                <td>3rd</td>
+                                <td>Civil</td>
+                                <td>2/06/19</td>
+                                <td>2/06/22</td>
+                                <td class="project-actions text-right">
+                                    <a class="btn btn-primary btn-sm" href="#">
+                                        <i class="fas fa-folder">
+                                        </i>
+                                        View
+                                    </a>
+                                    <a class="btn btn-info btn-sm" href="#">
+                                        <i class="fas fa-pencil-alt">
+                                        </i>
+                                        Edit
+                                    </a>
+                                    <a class="btn btn-danger btn-sm" href="#">
+                                        <i class="fas fa-trash">
+                                        </i>
+                                        Delete
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Arnab</td>
+                                <td>00000002</td>
+                                <td><img alt="Avatar" class="table-avatar" src="{% static 'dist/img/avatar.png'%}"
+                                        height="50" width="50"></td>
+                                <td>4th</td>
+                                <td>2nd</td>
+                                <td>Civil</td>
+                                <td>2/06/21</td>
+                                <td>2/06/23</td>
+                                <td class="project-actions text-right">
+                                    <a class="btn btn-primary btn-sm" href="#">
+                                        <i class="fas fa-folder">
+                                        </i>
+                                        View
+                                    </a>
+                                    <a class="btn btn-info btn-sm" href="#">
+                                        <i class="fas fa-pencil-alt">
+                                        </i>
+                                        Edit
+                                    </a>
+                                    <a class="btn btn-danger btn-sm" href="#">
+                                        <i class="fas fa-trash">
+                                        </i>
+                                        Delete
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Puloma</td>
+                                <td>00000005</td>
+                                <td><img alt="Avatar" class="table-avatar" src="{% static 'dist/img/avatar.png'%}"
+                                        height="50" width="50"></td>
+                                <td>4th</td>
+                                <td>2nd</td>
+                                <td>Civil</td>
+                                <td>2/06/21</td>
+                                <td>2/06/23</td>
+                                <td class="project-actions text-right">
+                                    <a class="btn btn-primary btn-sm" href="#">
+                                        <i class="fas fa-folder">
+                                        </i>
+                                        View
+                                    </a>
+                                    <a class="btn btn-info btn-sm" href="#">
+                                        <i class="fas fa-pencil-alt">
+                                        </i>
+                                        Edit
+                                    </a>
+                                    <a class="btn btn-danger btn-sm" href="#">
+                                        <i class="fas fa-trash">
+                                        </i>
+                                        Delete
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sandip</td>
+                                <td>00000006</td>
+                                <td><img alt="Avatar" class="table-avatar" src="{% static 'dist/img/avatar.png'%}"
+                                        height="50" width="50"></td>
+                                <td>4th</td>
+                                <td>2nd</td>
+                                <td>Civil</td>
+                                <td>2/06/21</td>
+                                <td>2/06/23</td>
+                                <td class="project-actions text-right">
+                                    <a class="btn btn-primary btn-sm" href="#">
+                                        <i class="fas fa-folder">
+                                        </i>
+                                        View
+                                    </a>
+                                    <a class="btn btn-info btn-sm" href="#">
+                                        <i class="fas fa-pencil-alt">
+                                        </i>
+                                        Edit
+                                    </a>
+                                    <a class="btn btn-danger btn-sm" href="#">
+                                        <i class="fas fa-trash">
+                                        </i>
+                                        Delete
+                                    </a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

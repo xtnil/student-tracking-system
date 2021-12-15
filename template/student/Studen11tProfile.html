@@ -1,0 +1,1140 @@
+{% extends 'core\siteBase.html' %}
+{% load static %}
+{% block title %}-Student Profile {% endblock title %}
+
+
+{% block content %}
+<div class="content-header">
+    <div class="container">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark"> Student <small>Profile</small></h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+
+<section class="content">
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-3">
+
+                <!-- Profile Image -->
+                <div class="card card-primary card-outline">
+
+                    <div class="card-body box-profile">
+                        <div class="text-center">
+                            <img class="profile-user-img img-fluid img-circle" src="{{StudentData.profilepic.url}}"
+                                alt="User profile picture">
+                        </div>
+
+                        <h3 class="profile-username text-center">{{StudentData.first_name}}
+                            {{StudentData.last_name}}</h3>
+
+                        <p class="text-muted text-center">{{StudentData.dept}}</p>
+
+                        <ul class="list-group list-group-unbordered mb-3">
+                            <li class="list-group-item">
+                                <b>Year</b> <a class="float-right">{{StudentData.year}}</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>Sem</b> <a class="float-right">{{StudentData.semester}}</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>RollNo</b> <a class="float-right">{{StudentData.enrollment}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+
+                <!-- About Me Box -->
+                <div class="card card-primary">
+
+                    <div class="card-header">
+                        <h3 class="card-title">About Me</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <strong><i class="fas fa-book mr-1"></i> Education</strong>
+
+                        <p class="text-muted">
+                            B.tech in Computer Science from the Harvard University
+                        </p>
+
+                        <hr>
+
+                        <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
+
+                        <p class="text-muted">Cambridge</p>
+
+                        <hr>
+
+                        <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
+
+                        <p class="text-muted">
+                            <span class="tag tag-danger">UI Design</span>
+                            <span class="tag tag-success">Coding</span>
+                            <span class="tag tag-info">Javascript</span>
+                            <span class="tag tag-warning">PHP</span>
+                            <span class="tag tag-primary">Node.js</span>
+                        </p>
+
+                        <hr>
+
+                        <strong><i class="far fa-file-alt mr-1"></i> Projects</strong>
+
+                        <p class="text-muted">
+                            <span class="tag tag-danger">UI Design using WEB 2.0</span>
+                            <span class="tag tag-success">Coding with C</span>
+                            <span class="tag tag-info">Python</span>
+                            <span class="tag tag-warning">Django</span>
+                            <span class="tag tag-primary">Node.js</span>
+                        </p>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header p-2">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item"><a class="nav-link active" href="#timeline"
+                                    data-toggle="tab">Markes</a></li>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Edit Profile</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="#add" data-toggle="tab">Add Activity</a></li>
+                        </ul>
+                    </div><!-- /.card-header -->
+                    <div class="card-body">
+                        <div class="tab-content">
+                            <!-- /.tab-pane -->
+                            <div class="tab-pane" id="timeline">
+                                <!-- The timeline -->
+                                <div class="timeline timeline-inverse">
+                                    <!-- timeline time label -->
+                                    <div class="time-label">
+                                        <span class="bg-danger">
+                                            Semester Marks
+                                        </span>
+                                    </div>
+                                    <!-- /.timeline-label -->
+                                    <!-- timeline item -->
+                                    <div>
+                                        <i class="fas fa-book-open bg-primary"></i>
+
+                                        <div class="timeline-item">
+                                            <div class="timeline-body">
+                                                <div class="container-fluid">
+                                                    <div class="col-md-12">
+
+
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h3 class="card-title">First Semester Subject</h3>
+                                                            </div>
+                                                            <!-- /.card-header -->
+                                                            <div class="card-body p-0">
+                                                                <table class="table table-striped">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th style="width: 10px">#</th>
+                                                                            <th>Subject</th>
+                                                                            <th>Progress</th>
+                                                                            <th style="width: 40px">Score</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>1.</td>
+                                                                            <td>Update software</td>
+                                                                            <td>
+                                                                                <div class="progress progress-xs">
+                                                                                    <div class="progress-bar progress-bar-danger"
+                                                                                        style="width: 55%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span class="badge bg-danger">55%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2.</td>
+                                                                            <td>Clean database</td>
+                                                                            <td>
+                                                                                <div class="progress progress-xs">
+                                                                                    <div class="progress-bar bg-warning"
+                                                                                        style="width: 70%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-warning">70%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>3.</td>
+                                                                            <td>Cron job running</td>
+                                                                            <td>
+                                                                                <div
+                                                                                    class="progress progress-xs progress-striped active">
+                                                                                    <div class="progress-bar bg-primary"
+                                                                                        style="width: 30%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-primary">30%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>4.</td>
+                                                                            <td>Fix and squish bugs</td>
+                                                                            <td>
+                                                                                <div
+                                                                                    class="progress progress-xs progress-striped active">
+                                                                                    <div class="progress-bar bg-success"
+                                                                                        style="width: 90%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-success">90%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <!-- /.card-body -->
+                                                        </div>
+                                                        <!-- /.card -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-book-open bg-primary"></i>
+
+                                        <div class="timeline-item">
+                                            <div class="timeline-body">
+                                                <div class="container-fluid">
+                                                    <div class="col-md-12">
+
+
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h3 class="card-title">Second Semester Subject</h3>
+                                                            </div>
+                                                            <!-- /.card-header -->
+                                                            <div class="card-body p-0">
+                                                                <table class="table table-striped">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th style="width: 10px">#</th>
+                                                                            <th>Subject</th>
+                                                                            <th>Progress</th>
+                                                                            <th style="width: 40px">Score</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>1.</td>
+                                                                            <td>Update software</td>
+                                                                            <td>
+                                                                                <div class="progress progress-xs">
+                                                                                    <div class="progress-bar progress-bar-danger"
+                                                                                        style="width: 55%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span class="badge bg-danger">55%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2.</td>
+                                                                            <td>Clean database</td>
+                                                                            <td>
+                                                                                <div class="progress progress-xs">
+                                                                                    <div class="progress-bar bg-warning"
+                                                                                        style="width: 70%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-warning">70%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>3.</td>
+                                                                            <td>Cron job running</td>
+                                                                            <td>
+                                                                                <div
+                                                                                    class="progress progress-xs progress-striped active">
+                                                                                    <div class="progress-bar bg-primary"
+                                                                                        style="width: 30%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-primary">30%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>4.</td>
+                                                                            <td>Fix and squish bugs</td>
+                                                                            <td>
+                                                                                <div
+                                                                                    class="progress progress-xs progress-striped active">
+                                                                                    <div class="progress-bar bg-success"
+                                                                                        style="width: 90%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-success">90%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <!-- /.card-body -->
+                                                        </div>
+                                                        <!-- /.card -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-book-open bg-primary"></i>
+
+                                        <div class="timeline-item">
+                                            <div class="timeline-body">
+                                                <div class="container-fluid">
+                                                    <div class="col-md-12">
+
+
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h3 class="card-title">Third Semester Subject</h3>
+                                                            </div>
+                                                            <!-- /.card-header -->
+                                                            <div class="card-body p-0">
+                                                                <table class="table table-striped">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th style="width: 10px">#</th>
+                                                                            <th>Subject</th>
+                                                                            <th>Progress</th>
+                                                                            <th style="width: 40px">Score</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>1.</td>
+                                                                            <td>Update software</td>
+                                                                            <td>
+                                                                                <div class="progress progress-xs">
+                                                                                    <div class="progress-bar progress-bar-danger"
+                                                                                        style="width: 55%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span class="badge bg-danger">55%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2.</td>
+                                                                            <td>Clean database</td>
+                                                                            <td>
+                                                                                <div class="progress progress-xs">
+                                                                                    <div class="progress-bar bg-warning"
+                                                                                        style="width: 70%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-warning">70%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>3.</td>
+                                                                            <td>Cron job running</td>
+                                                                            <td>
+                                                                                <div
+                                                                                    class="progress progress-xs progress-striped active">
+                                                                                    <div class="progress-bar bg-primary"
+                                                                                        style="width: 30%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-primary">30%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>4.</td>
+                                                                            <td>Fix and squish bugs</td>
+                                                                            <td>
+                                                                                <div
+                                                                                    class="progress progress-xs progress-striped active">
+                                                                                    <div class="progress-bar bg-success"
+                                                                                        style="width: 90%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-success">90%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <!-- /.card-body -->
+                                                        </div>
+                                                        <!-- /.card -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-book-open bg-primary"></i>
+
+                                        <div class="timeline-item">
+                                            <div class="timeline-body">
+                                                <div class="container-fluid">
+                                                    <div class="col-md-12">
+
+
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h3 class="card-title">Fourth Semester Subject</h3>
+                                                            </div>
+                                                            <!-- /.card-header -->
+                                                            <div class="card-body p-0">
+                                                                <table class="table table-striped">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th style="width: 10px">#</th>
+                                                                            <th>Subject</th>
+                                                                            <th>Progress</th>
+                                                                            <th style="width: 40px">Score</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>1.</td>
+                                                                            <td>Update software</td>
+                                                                            <td>
+                                                                                <div class="progress progress-xs">
+                                                                                    <div class="progress-bar progress-bar-danger"
+                                                                                        style="width: 55%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span class="badge bg-danger">55%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2.</td>
+                                                                            <td>Clean database</td>
+                                                                            <td>
+                                                                                <div class="progress progress-xs">
+                                                                                    <div class="progress-bar bg-warning"
+                                                                                        style="width: 70%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-warning">70%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>3.</td>
+                                                                            <td>Cron job running</td>
+                                                                            <td>
+                                                                                <div
+                                                                                    class="progress progress-xs progress-striped active">
+                                                                                    <div class="progress-bar bg-primary"
+                                                                                        style="width: 30%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-primary">30%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>4.</td>
+                                                                            <td>Fix and squish bugs</td>
+                                                                            <td>
+                                                                                <div
+                                                                                    class="progress progress-xs progress-striped active">
+                                                                                    <div class="progress-bar bg-success"
+                                                                                        style="width: 90%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-success">90%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <!-- /.card-body -->
+                                                        </div>
+                                                        <!-- /.card -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-book-open bg-primary"></i>
+
+                                        <div class="timeline-item">
+                                            <div class="timeline-body">
+                                                <div class="container-fluid">
+                                                    <div class="col-md-12">
+
+
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h3 class="card-title">Fifth Semester Subject</h3>
+                                                            </div>
+                                                            <!-- /.card-header -->
+                                                            <div class="card-body p-0">
+                                                                <table class="table table-striped">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th style="width: 10px">#</th>
+                                                                            <th>Subject</th>
+                                                                            <th>Progress</th>
+                                                                            <th style="width: 40px">Score</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>1.</td>
+                                                                            <td>Update software</td>
+                                                                            <td>
+                                                                                <div class="progress progress-xs">
+                                                                                    <div class="progress-bar progress-bar-danger"
+                                                                                        style="width: 55%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span class="badge bg-danger">55%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2.</td>
+                                                                            <td>Clean database</td>
+                                                                            <td>
+                                                                                <div class="progress progress-xs">
+                                                                                    <div class="progress-bar bg-warning"
+                                                                                        style="width: 70%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-warning">70%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>3.</td>
+                                                                            <td>Cron job running</td>
+                                                                            <td>
+                                                                                <div
+                                                                                    class="progress progress-xs progress-striped active">
+                                                                                    <div class="progress-bar bg-primary"
+                                                                                        style="width: 30%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-primary">30%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>4.</td>
+                                                                            <td>Fix and squish bugs</td>
+                                                                            <td>
+                                                                                <div
+                                                                                    class="progress progress-xs progress-striped active">
+                                                                                    <div class="progress-bar bg-success"
+                                                                                        style="width: 90%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-success">90%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <!-- /.card-body -->
+                                                        </div>
+                                                        <!-- /.card -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-book-open bg-primary"></i>
+
+                                        <div class="timeline-item">
+                                            <div class="timeline-body">
+                                                <div class="container-fluid">
+                                                    <div class="col-md-12">
+
+
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h3 class="card-title">Six Semester Subject</h3>
+                                                            </div>
+                                                            <!-- /.card-header -->
+                                                            <div class="card-body p-0">
+                                                                <table class="table table-striped">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th style="width: 10px">#</th>
+                                                                            <th>Subject</th>
+                                                                            <th>Progress</th>
+                                                                            <th style="width: 40px">Score</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>1.</td>
+                                                                            <td>Update software</td>
+                                                                            <td>
+                                                                                <div class="progress progress-xs">
+                                                                                    <div class="progress-bar progress-bar-danger"
+                                                                                        style="width: 55%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span class="badge bg-danger">55%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2.</td>
+                                                                            <td>Clean database</td>
+                                                                            <td>
+                                                                                <div class="progress progress-xs">
+                                                                                    <div class="progress-bar bg-warning"
+                                                                                        style="width: 70%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-warning">70%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>3.</td>
+                                                                            <td>Cron job running</td>
+                                                                            <td>
+                                                                                <div
+                                                                                    class="progress progress-xs progress-striped active">
+                                                                                    <div class="progress-bar bg-primary"
+                                                                                        style="width: 30%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-primary">30%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>4.</td>
+                                                                            <td>Fix and squish bugs</td>
+                                                                            <td>
+                                                                                <div
+                                                                                    class="progress progress-xs progress-striped active">
+                                                                                    <div class="progress-bar bg-success"
+                                                                                        style="width: 90%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-success">90%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <!-- /.card-body -->
+                                                        </div>
+                                                        <!-- /.card -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-book-open bg-primary"></i>
+
+                                        <div class="timeline-item">
+                                            <div class="timeline-body">
+                                                <div class="container-fluid">
+                                                    <div class="col-md-12">
+
+
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h3 class="card-title">Seventh Semester Subject</h3>
+                                                            </div>
+                                                            <!-- /.card-header -->
+                                                            <div class="card-body p-0">
+                                                                <table class="table table-striped">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th style="width: 10px">#</th>
+                                                                            <th>Subject</th>
+                                                                            <th>Progress</th>
+                                                                            <th style="width: 40px">Score</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>1.</td>
+                                                                            <td>Update software</td>
+                                                                            <td>
+                                                                                <div class="progress progress-xs">
+                                                                                    <div class="progress-bar progress-bar-danger"
+                                                                                        style="width: 55%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span class="badge bg-danger">55%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2.</td>
+                                                                            <td>Clean database</td>
+                                                                            <td>
+                                                                                <div class="progress progress-xs">
+                                                                                    <div class="progress-bar bg-warning"
+                                                                                        style="width: 70%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-warning">70%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>3.</td>
+                                                                            <td>Cron job running</td>
+                                                                            <td>
+                                                                                <div
+                                                                                    class="progress progress-xs progress-striped active">
+                                                                                    <div class="progress-bar bg-primary"
+                                                                                        style="width: 30%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-primary">30%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>4.</td>
+                                                                            <td>Fix and squish bugs</td>
+                                                                            <td>
+                                                                                <div
+                                                                                    class="progress progress-xs progress-striped active">
+                                                                                    <div class="progress-bar bg-success"
+                                                                                        style="width: 90%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-success">90%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <!-- /.card-body -->
+                                                        </div>
+                                                        <!-- /.card -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-book-open bg-primary"></i>
+
+                                        <div class="timeline-item">
+                                            <div class="timeline-body">
+                                                <div class="container-fluid">
+                                                    <div class="col-md-12">
+
+
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h3 class="card-title">Eighth Semester Sunject</h3>
+                                                            </div>
+                                                            <!-- /.card-header -->
+                                                            <div class="card-body p-0">
+                                                                <table class="table table-striped">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th style="width: 10px">#</th>
+                                                                            <th>Subject</th>
+                                                                            <th>Progress</th>
+                                                                            <th style="width: 40px">Score</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>1.</td>
+                                                                            <td>Update software</td>
+                                                                            <td>
+                                                                                <div class="progress progress-xs">
+                                                                                    <div class="progress-bar progress-bar-danger"
+                                                                                        style="width: 55%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span class="badge bg-danger">55%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2.</td>
+                                                                            <td>Clean database</td>
+                                                                            <td>
+                                                                                <div class="progress progress-xs">
+                                                                                    <div class="progress-bar bg-warning"
+                                                                                        style="width: 70%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-warning">70%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>3.</td>
+                                                                            <td>Cron job running</td>
+                                                                            <td>
+                                                                                <div
+                                                                                    class="progress progress-xs progress-striped active">
+                                                                                    <div class="progress-bar bg-primary"
+                                                                                        style="width: 30%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-primary">30%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>4.</td>
+                                                                            <td>Fix and squish bugs</td>
+                                                                            <td>
+                                                                                <div
+                                                                                    class="progress progress-xs progress-striped active">
+                                                                                    <div class="progress-bar bg-success"
+                                                                                        style="width: 90%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-success">90%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <!-- /.card-body -->
+                                                        </div>
+                                                        <!-- /.card -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-book-open bg-primary"></i>
+
+                                        <div class="timeline-item">
+                                            <div class="timeline-body">
+                                                <div class="container-fluid">
+                                                    <div class="col-md-12">
+
+
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h3 class="card-title">First Semester Sunject</h3>
+                                                            </div>
+                                                            <!-- /.card-header -->
+                                                            <div class="card-body p-0">
+                                                                <table class="table table-striped">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th style="width: 10px">#</th>
+                                                                            <th>Subject</th>
+                                                                            <th>Progress</th>
+                                                                            <th style="width: 40px">Score</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>1.</td>
+                                                                            <td>Update software</td>
+                                                                            <td>
+                                                                                <div class="progress progress-xs">
+                                                                                    <div class="progress-bar progress-bar-danger"
+                                                                                        style="width: 55%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span class="badge bg-danger">55%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2.</td>
+                                                                            <td>Clean database</td>
+                                                                            <td>
+                                                                                <div class="progress progress-xs">
+                                                                                    <div class="progress-bar bg-warning"
+                                                                                        style="width: 70%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-warning">70%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>3.</td>
+                                                                            <td>Cron job running</td>
+                                                                            <td>
+                                                                                <div
+                                                                                    class="progress progress-xs progress-striped active">
+                                                                                    <div class="progress-bar bg-primary"
+                                                                                        style="width: 30%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-primary">30%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>4.</td>
+                                                                            <td>Fix and squish bugs</td>
+                                                                            <td>
+                                                                                <div
+                                                                                    class="progress progress-xs progress-striped active">
+                                                                                    <div class="progress-bar bg-success"
+                                                                                        style="width: 90%"></div>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td><span
+                                                                                    class="badge bg-success">90%</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <!-- /.card-body -->
+                                                        </div>
+                                                        <!-- /.card -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="settings">
+                                <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <div class="form-group row">
+                                        <label for="inputName2" class="col-sm-2 col-form-label">First Name</label>
+                                        <div class="col-sm-4">
+                                            {{UserProfileForm.first_name}}
+                                        </div>
+                                        <label for="inputName2" class="col-sm-2 col-form-label">Last Name</label>
+                                        <div class="col-sm-4">
+                                            {{UserProfileForm.last_name}}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputName2" class="col-sm-2 col-form-label">User Name</label>
+                                        <div class="col-sm-4">
+                                            {{UserProfileForm.username}}
+                                        </div>
+                                        <label for="inputName2" class="col-sm-2 col-form-label">Email </label>
+                                        <div class="col-sm-4">
+                                            {{UserProfileForm.email}}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputName2" class="col-sm-2 col-form-label">Password</label>
+                                        <div class="col-sm-4">
+                                            {{UserProfileForm.password1}}
+                                        </div>
+                                        <label for="inputName2" class="col-sm-2 col-form-label">Confirm Password</label>
+                                        <div class="col-sm-4">
+                                            {{UserProfileForm.password2}}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputName2" class="col-sm-2 col-form-label">Enrollment</label>
+                                        <div class="col-sm-10">
+                                            {{UserProfileForm.enrollment}}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputName2" class="col-sm-2 col-form-label">Department</label>
+                                        <div class="col-sm-4">
+                                            {{UserProfileForm.dept}}
+                                        </div>
+                                        <label for="inputExperience" class="col-sm-2 col-form-label">Semester</label>
+                                        <div class="col-sm-4">
+                                            {{UserProfileForm.semester}}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputExperience" class="col-sm-2 col-form-label">Year</label>
+                                        <div class="col-sm-10">
+                                            {{UserProfileForm.year}}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputSkills" class="col-sm-2 col-form-label">Profile Pic
+                                            Preview</label>
+                                        <div class="col-sm-4">
+                                            <label for="customFile">
+                                                <img class="profile-user-img img-fluid img-circle" id='previewpic'
+                                                    src="{{StudentData.profilepic.url}}" alt="User profile picture">
+                                            </label>
+                                        </div>
+                                        {{UserProfileForm.profilepic}}
+
+                                        <!-- <label for="inputSkills" class="col-sm-2 col-form-label">Profile Pic
+                                            Select</label>
+                                        <div class="col-sm-4">
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    {{UserProfileForm.profilepic}}
+                                                    <input type="file" class="custom-file-input" id="customFile"
+                                                        name="profilepic" onchange="readURL(this); value='{{StudentData.profilepic}}'> 
+                                                    <label class=" custom-file-label" for="customFile">Profile
+                                                    Image</label>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="offset-sm-2 col-sm-10">
+                                            <button type="submit" class="btn btn-danger">Update your Academic
+                                                Details</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane" id="add">
+                                <form class="form-horizontal" action="{% url 'AddActivity' %}" method="POST"
+                                    enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <div class="form-group row">
+                                        <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                                        <div class="col-sm-10">
+                                            {{ActivityProfileForm.activityname}}
+                                            <!-- <input type="text" class="form-control" id="inputName" placeholder="Name"> -->
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputEmail" class="col-sm-2 col-form-label">Date</label>
+                                        <div class="col-sm-10">
+                                            {{ActivityProfileForm.activitydate}}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputName2" class="col-sm-2 col-form-label">Details</label>
+                                        <div class="col-sm-10">
+                                            {{ActivityProfileForm.activitydetails}}
+                                            {{ActivityProfileForm.media}}
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="offset-sm-2 col-sm-10">
+                                            <button type="submit" class="btn btn-danger">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>Name</th>
+                                            <th>Date</th>
+                                            <th style="width: 40px">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1.</td>
+                                            <td>Update software</td>
+                                            <td>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar progress-bar-danger" style="width: 55%">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge bg-danger">Not Approve</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.</td>
+                                            <td>Clean database</td>
+                                            <td>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar bg-warning" style="width: 70%"></div>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge bg-warning">Pending</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3.</td>
+                                            <td>Cron job running</td>
+                                            <td>
+                                                <div class="progress progress-xs progress-striped active">
+                                                    <div class="progress-bar bg-primary" style="width: 30%"></div>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge bg-primary">Processing</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>4.</td>
+                                            <td>Fix and squish bugs</td>
+                                            <td>
+                                                <div class="progress progress-xs progress-striped active">
+                                                    <div class="progress-bar bg-success" style="width: 90%"></div>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge bg-success">Approve</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.tab-pane -->
+                        </div>
+                        <!-- /.tab-content -->
+                    </div><!-- /.card-body -->
+                </div>
+                <!-- /.nav-tabs-custom -->
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+{% endblock content %}
+
+{% block script %}
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#previewpic')
+                    .attr('src', e.target.result);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+
+{% endblock script %}

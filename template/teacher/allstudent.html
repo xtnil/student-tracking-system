@@ -1,0 +1,57 @@
+{% extends 'core\teacherbase.html' %}
+{% load static %}
+{% block title %}-Student Profile {% endblock title %}
+{% block content %}
+<div class="card-body">
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">All Student</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Id</th>
+                                    <th>Image</th>
+                                    <th>Semester</th>
+                                    <th>Year</th>
+                                    <th>Dept</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for i in allstudent %}
+                                <tr>
+                                    <td>{{i.first_name}} {{i.last_name}}</td>
+                                    <td>{{i.enrollment}}</td>
+                                    <td><img alt="Avatar" class="table-avatar" src="{{i.profilepic.url}}" height="50"
+                                            width="50"></td>
+                                    <td>{{i.semester}}</td>
+                                    <td>{{i.year}}</td>
+                                    <td>{{i.dept}}</td>
+
+
+                                    <td class="project-actions text-right">
+                                        <a class="btn btn-primary btn-sm" href="{% url 'addacademic' pk=i.id %}">
+                                            <i class="fas fa-folder">
+                                            </i>
+                                            Give Marks
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock content %}

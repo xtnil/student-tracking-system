@@ -1,0 +1,97 @@
+{% extends 'core\teacherbase.html' %}
+{% block title %}-Teacher Profile {% endblock title %}
+
+
+{% block content %}
+<div class="card-body">
+    <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group row">
+            <label for="inputName2" class="col-sm-2 col-form-label">First Name</label>
+            <div class="col-sm-4">
+                {{UserProfileForm.first_name}}
+            </div>
+            <label for="inputName2" class="col-sm-2 col-form-label">Last Name</label>
+            <div class="col-sm-4">
+                {{UserProfileForm.last_name}}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputName2" class="col-sm-2 col-form-label">User Name</label>
+            <div class="col-sm-4">
+                {{UserProfileForm.username}}
+            </div>
+            <label for="inputName2" class="col-sm-2 col-form-label">Email </label>
+            <div class="col-sm-4">
+                {{UserProfileForm.email}}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputName2" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-4">
+                {{UserProfileForm.password1}}
+            </div>
+            <label for="inputName2" class="col-sm-2 col-form-label">Confirm Password</label>
+            <div class="col-sm-4">
+                {{UserProfileForm.password2}}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputName2" class="col-sm-2 col-form-label">Enrollment</label>
+            <div class="col-sm-10">
+                {{UserProfileForm.enrollment}}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputName2" class="col-sm-2 col-form-label">Department</label>
+            <div class="col-sm-4">
+                {{UserProfileForm.dept}}
+            </div>
+            <label for="inputExperience" class="col-sm-2 col-form-label">Semester</label>
+            <div class="col-sm-4">
+                {{UserProfileForm.semester}}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputExperience" class="col-sm-2 col-form-label">Year</label>
+            <div class="col-sm-10">
+                {{UserProfileForm.year}}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputSkills" class="col-sm-2 col-form-label">Profile Pic
+                Preview</label>
+            <div class="col-sm-4">
+                <label for="customFile">
+                    <img class="profile-user-img img-fluid img-circle" id='previewpic'
+                        src="{{StudentData.profilepic.url}}" alt="User profile picture">
+                </label>
+            </div>
+            {{UserProfileForm.profilepic}}
+        </div>
+        <div class="form-group row">
+            <div class="offset-sm-2 col-sm-10">
+                <button type="submit" class="btn btn-danger">Update youyr Academic
+                    Details</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock content %}
+{% block script %}
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#previewpic')
+                    .attr('src', e.target.result);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+
+{% endblock script %}

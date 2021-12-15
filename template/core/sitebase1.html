@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>{% block title %}STS {% endblock title %}</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css'%}">
+    <link rel="stylesheet" href="{% static 'plugins/toastr/toastr.min.css'%}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css'%}">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+
+<body class="hold-transition layout-top-nav">
+
+
+
+    <div class="wrapper">
+
+        {% include 'core/components/nav.html' %}
+
+        <div class="content-wrapper">
+
+            {% block content %}
+            {% endblock content %}
+
+            {% include 'core/components/footer.html' %}
+        </div>
+
+        <!-- jQuery -->
+        <script src="{% static 'plugins/jquery/jquery.min.js'%}"></script>
+        <!-- Bootstrap 4 -->
+        <script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+        <script src="{% static 'plugins/toastr/toastr.min.js'%}"></script>
+        <!-- AdminLTE App -->
+        <script src="{% static 'dist/js/adminlte.min.js'%}"></script>
+        {% block script %}
+        {% endblock script %}
+        {% if messages %}
+        {% for message in messages %}
+        {% if message.tags == 'success'%}
+        <script type=text/javascript>toastr.{{ message.tags }}('{{ message }}',{timeOut:5000})</script>
+        {% elif message.tags == 'info' %}
+        <script type=text/javascript>toastr.{{ message.tags }}('{{ message }}',{timeOut:5000})</script>
+        {% elif message.tags == 'warning' %}
+        <script type=text/javascript>toastr.{{ message.tags }}('{{ message }}',{timeOut:10000})</script>
+        {% elif message.tags == 'error' %}
+        <script type=text/javascript>toastr.{{ message.tags }}('{{ message }}',{timeOut:10000})</script>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+
+        {% if form.errors %}
+        <script type=text/javascript>toastr.error('{{ form.errors|escape }}',{timeout:5000})</script>
+        {% endif %}
+</body>
+
+</html>

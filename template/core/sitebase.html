@@ -1,0 +1,239 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>{% block title %}STS {% endblock title %}</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css'%}">
+    <link rel="stylesheet" href="{% static 'plugins/toastr/toastr.min.css'%}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css'%}">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .grid-container {
+            columns: 5 200px;
+            column-gap: 1.5rem;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .grid-container div {
+            width: 150px;
+            margin: 0 1.5rem 1.5rem 0;
+            display: inline-block;
+            width: 100%;
+            border: solid 2px black;
+            padding: 5px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            transition: all 0.25s ease-in-out;
+        }
+
+        .grid-container div:hover img {
+            filter: grayscale(0);
+        }
+
+        .grid-container div:hover {
+            border-color: coral;
+        }
+
+        .grid-container div img {
+            width: 100%;
+            filter: grayscale(100%);
+            border-radius: 5px;
+            transition: all 0.25s ease-in-out;
+        }
+
+        .grid-container div p {
+            margin: 5px 0;
+            padding: 0;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+
+</head>
+
+<body class="hold-transition layout-top-nav">
+
+
+
+    <div class="wrapper">
+
+        {% include 'core/components/nav.html'%}
+
+        <div class="content-wrapper">
+            <div class="content-header">
+                <div class="container">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0 text-dark"> Student <small>Profile</small></h1>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3">
+
+                            <!-- Profile Image -->
+                            <div class="card card-primary card-outline">
+
+                                <div class="card-body box-profile">
+                                    <div class="text-center">
+                                        <img class="profile-user-img img-fluid img-circle"
+                                            src="{{StudentData.profilepic.url}}" alt="User profile picture">
+                                    </div>
+
+                                    <h3 class="profile-username text-center">{{StudentData.first_name}}
+                                        {{StudentData.last_name}}</h3>
+
+                                    <p class="text-muted text-center">{{StudentData.dept}}</p>
+
+                                    <ul class="list-group list-group-unbordered mb-3">
+                                        <li class="list-group-item">
+                                            <b>Year</b> <a class="float-right">{{StudentData.year}}</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>Sem</b> <a class="float-right">{{StudentData.semester}}</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>RollNo</b> <a class="float-right">{{StudentData.enrollment}}</a>
+                                        </li>
+                                    </ul>
+                                    <a type="button" class="btn btn-block btn-info btn-flat"
+                                        href="{% url 'student' %}">Profile</a>
+                                    <a type="button" class="btn btn-block btn-info btn-flat"
+                                        href="{% url 'activity' %}">Activity</a>
+                                    <a type="button" class="btn btn-block btn-info btn-flat"
+                                        href="{% url 'viewacademic' %}">Academic</a>
+                                    <a type="button" class="btn btn-block btn-info btn-flat"
+                                        href="{% url 'category' %}">Category</a>
+                                    <a type="button" class="btn btn-block btn-info btn-flat"
+                                        href="{% url 'addquestion' %}">Add Question</a>
+                                    <a type="button" class="btn btn-block btn-info btn-flat"
+                                        href="{% url 'allquestion' %}">All Question</a>
+                                    <a type="button" class="btn btn-block btn-info btn-flat"
+                                        href="{% url 'addnews' %}">Add News</a>
+                                    <a type="button" class="btn btn-block btn-info btn-flat"
+                                        href="{% url 'allnews' %}">All News</a>
+                                    <a type="button" class="btn btn-block btn-info btn-flat"
+                                        href="{% url 'addpin' %}">Add pin</a>
+                                    <a type="button" class="btn btn-block btn-info btn-flat"
+                                        href="{% url 'allpin' %}">All pin</a>
+
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+
+                            <!-- About Me Box -->
+                            <div class="card card-primary">
+
+                                <div class="card-header">
+                                    <h3 class="card-title">About Me</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <strong><i class="fas fa-book mr-1"></i> Education</strong>
+
+                                    <p class="text-muted">
+                                        B.S. in Computer Science from the University of Tennessee at Knoxville
+                                    </p>
+
+                                    <hr>
+
+                                    <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
+
+                                    <p class="text-muted">Malibu, California</p>
+
+                                    <hr>
+
+                                    <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
+
+                                    <p class="text-muted">
+                                        <span class="tag tag-danger">UI Design</span>
+                                        <span class="tag tag-success">Coding</span>
+                                        <span class="tag tag-info">Javascript</span>
+                                        <span class="tag tag-warning">PHP</span>
+                                        <span class="tag tag-primary">Node.js</span>
+                                    </p>
+
+                                    <hr>
+
+                                    <strong><i class="far fa-file-alt mr-1"></i> Projects</strong>
+
+                                    <p class="text-muted">
+                                        <span class="tag tag-danger">UI Design using WEB 2.0</span>
+                                        <span class="tag tag-success">Coding with C</span>
+                                        <span class="tag tag-info">Python</span>
+                                        <span class="tag tag-warning">Django</span>
+                                        <span class="tag tag-primary">Node.js</span>
+                                    </p>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        {% block content %}
+                        {% endblock content %}
+                    </div>
+                </div>
+            </section>
+
+
+
+            {% include 'core/components/footer.html' %}
+        </div>
+
+        <!-- jQuery -->
+        <script src="{% static 'plugins/jquery/jquery.min.js'%}"></script>
+        <!-- Bootstrap 4 -->
+        <script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+        <script src="{% static 'plugins/toastr/toastr.min.js'%}"></script>
+        <!-- AdminLTE App -->
+        <script src="{% static 'dist/js/adminlte.min.js'%}"></script>
+        {% block script %}
+        {% endblock script %}
+        {% if messages %}
+        {% for message in messages %}
+        {% if message.tags == 'success'%}
+        <script type=text/javascript>toastr.{{ message.tags }}('{{ message }}',{timeOut:5000})</script>
+        {% elif message.tags == 'info' %}
+        <script type=text/javascript>toastr.{{ message.tags }}('{{ message }}',{timeOut:5000})</script>
+        {% elif message.tags == 'warning' %}
+        <script type=text/javascript>toastr.{{ message.tags }}('{{ message }}',{timeOut:10000})</script>
+        {% elif message.tags == 'error' %}
+        <script type=text/javascript>toastr.{{ message.tags }}('{{ message }}',{timeOut:10000})</script>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+
+        {% if form.errors %}
+        <script type=text/javascript>toastr.error('{{ form.errors|escape }}',{timeout:5000})</script>
+        {% endif %}
+</body>
+
+</html>
